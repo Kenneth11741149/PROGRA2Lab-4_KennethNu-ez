@@ -9,6 +9,19 @@ package lab.pkg4_kennethnuñezyjoselagos;
  *
  * @author tali_
  */
-public class duendes {
+public class duendes extends Piezas {
+
+    public duendes() {
+        super();
+    }
+
+    public duendes(String color, String material) {
+        super(color, material);
+    }
+
+    @Override
+    public void movement() {
+       
+    }
     
 }

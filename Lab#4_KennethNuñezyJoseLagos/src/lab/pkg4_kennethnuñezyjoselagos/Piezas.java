@@ -1,14 +1,40 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package lab.pkg4_kennethnuñezyjoselagos;
 
-/**
- *
- * @author tali_
- */
-public class Piezas {
+import java.util.ArrayList;
+
+public abstract class Piezas {
+    protected String color;
+    protected String material;
+
+    public Piezas() {
+    }
+
+    public Piezas(String color, String material) {
+        this.color = color;
+        this.material = material;
+    }
+    public abstract void movement();
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
+    @Override
+    public String toString() {
+        return "Piezas{" + "color=" + color + ", material=" + material + '}';
+    }
     
 }

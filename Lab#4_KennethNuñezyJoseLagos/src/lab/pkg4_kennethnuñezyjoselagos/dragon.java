@@ -9,6 +9,19 @@ package lab.pkg4_kennethnuñezyjoselagos;
  *
  * @author tali_
  */
-public class dragon {
+public class dragon extends Piezas {
+
+    public dragon() {
+        super();
+    }
+
+    public dragon(String color, String material) {
+        super(color, material);
+    }
+    @Override
+    public void movement() {
+    
+    }
+    
     
 }

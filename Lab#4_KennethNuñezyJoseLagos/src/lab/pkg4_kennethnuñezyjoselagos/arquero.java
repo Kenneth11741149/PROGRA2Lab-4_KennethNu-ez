@@ -9,6 +9,19 @@ package lab.pkg4_kennethnuñezyjoselagos;
  *
  * @author tali_
  */
-public class arquero {
+public class arquero extends Piezas{
+
+    public arquero() {
+        super();
+    }
+
+    public arquero(String color, String material) {
+        super(color, material);
+    }
+
+    @Override
+    public void movement() {
+       
+    }
     
 }

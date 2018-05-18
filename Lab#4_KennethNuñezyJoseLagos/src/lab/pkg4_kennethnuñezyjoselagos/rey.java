@@ -9,6 +9,19 @@ package lab.pkg4_kennethnuñezyjoselagos;
  *
  * @author tali_
  */
-public class rey {
+public class rey extends Piezas {
+
+    public rey() {
+        super();
+    }
+
+    public rey(String color, String material) {
+        super(color, material);
+    }
+
+    @Override
+    public void movement() {
+        
+    }
     
 }

@@ -5,10 +5,33 @@
  */
 package lab.pkg4_kennethnuñezyjoselagos;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author tali_
  */
-public class mago {
+public class mago extends Piezas {
+
+    public mago() {
+        super();
+    }
+
+    public mago(String color, String material) {
+        super(color, material);
+    }
     
+    @Override
+    public String getColor() {
+        return color;
+    }
+
+    @Override
+    public void movement() {
+        
+    }
+
+
 }
+    
+
