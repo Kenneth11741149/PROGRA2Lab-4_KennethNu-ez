@@ -9,21 +9,48 @@ public class Lab4_KennethNuñezyJoseLagos {
     static ArrayList<Jugadores> Players = new ArrayList<Jugadores>();
     static boolean PlayerOne = false;
     static boolean PlayerTwo = false;
+    static boolean alive = true;
     static int pene = 1;
-    static String[][] Tablero = {{"nC","__","nF","nA","nR","nM","nA","nF","__","nC"},
-                                 {"nD","__","nA","nD","nC","nF","nD","nA","__","nD"},
-                                 {"__","__","__","__","__","__","__","__","__","__"},
-                                 {"__","__","__","__","__","__","__","__","__","__"},
-                                 {"__","__","__","__","__","__","__","__","__","__"},
-                                 {"__","__","__","__","__","__","__","__","__","__"},
-                                 {"__","__","__","__","__","__","__","__","__","__"},
-                                 {"__","__","__","__","__","__","__","__","__","__"},
-                                 {"wD","__","wA","wD","wF","wC","wD","wA","__","wD"},
-                                 {"wC","__","wF","wA","wM","wR","wA","wF","__","wC"}
-                                };
+    static Piezas[][] Tablero1 = new Piezas [10][10];
+    
 
     public static void main(String[] args) {
-        System.out.println("Bienvenido al laboratorio de Jose Lagos 11741409");
+        Tablero1[0][0] = new caballero("Negro","Madera");
+        Tablero1[1][0] = new duendes("Negro","Madera");
+        Tablero1[0][2] = new dragon("Negro","Madera");
+        Tablero1[0][3] = new arquero("Negro","Madera");
+        Tablero1[0][4] = new rey("Negro","Madera");
+        Tablero1[0][5] = new mago("Negro","Madera");
+        Tablero1[0][6] = new arquero("Negro","Madera");
+        Tablero1[0][7] = new dragon("Negro", "Madera");
+        Tablero1[0][9] = new caballero("Negro","Madera");
+        Tablero1[1][2] = new arquero("Negro","Madera");
+        Tablero1[1][3] = new duendes("Negro","Madera");
+        Tablero1[1][4] = new caballero("Negro","Madera");
+        Tablero1[1][5]= new dragon("Negro","Madera");
+        Tablero1[1][6] = new duendes("Negro","Madera");
+        Tablero1[1][7] = new arquero("Negro","Madera");
+        Tablero1[1][9] = new duendes("Negro","Madera");
+        
+        Tablero1[8][0] = new duendes("Blanco","Madera");
+        Tablero1[9][0] = new caballero("Blanco","Madera");
+        Tablero1[8][2] = new arquero("Blanco","Madera");
+        Tablero1[8][3] = new duendes("Blanco","Madera");
+        Tablero1[8][4] = new dragon("Blanco","Madera");
+        Tablero1[8][5] = new caballero("Blanco","Madera");
+        Tablero1[8][6] = new duendes("Blanco","Madera");
+        Tablero1[8][7] = new arquero("Blanco","Madera");
+        Tablero1[8][9] = new duendes("Blanco","Madera");
+        Tablero1[9][2] = new caballero("Blanco","Madera");
+        Tablero1[9][3] = new arquero("Blanco","Madera");
+        Tablero1[9][4] = new mago("Blanco","Madera");
+        Tablero1[9][5] = new rey("Blanco","Madera");
+        Tablero1[9][6] = new arquero("Blanco","Madera");
+        Tablero1[9][7] = new caballero("Blanco","Madera");
+        Tablero1[9][9] = new caballero("Blanco","Madera");
+        
+        
+        System.out.println("Bienvenido azl laboratorio de Jose Lagos 11741409");
         System.out.println("Bienvenido al laboratorio de Kenneth Nuñez 11741149");
         char resp = 'S';
         while (resp == 'S' || resp == 's') {
@@ -37,7 +64,25 @@ public class Lab4_KennethNuñezyJoseLagos {
                     JugadoresMain();
                     break;
                 case 2:
-
+                    System.out.println("Las coordenadas se meten de la siguiente manera: ");
+                    System.out.println("X,Y      (Sin parentesis ni nada siendo x su posicion en x y Y su posicion en y");
+                    while(alive == true){
+                        if(alive == true){
+                            System.out.println("Primer jugador ingrese su posicion actual. ");
+                            String position = read.nextLine();
+                            String[] positionizer = position.split(",");
+                            
+                            for(int i = 0; i < Tablero1.length;i++){
+                                for(int j = 0; j<Tablero1.length;j++){
+                                    
+                                }
+                            }
+                            
+                        }
+                        if(alive == true){
+                            
+                        }
+                    }
                     break;
                 case 3:
                     System.exit(0);
@@ -126,6 +171,15 @@ public class Lab4_KennethNuñezyJoseLagos {
         }
         Jugadores x = new Jugadores(name, username, puntos, birthplace, age, gender);
         Players.add(x);
+    }
+    static void Printer(){
+        for(int i = 0; i < Tablero1.length; i++){
+            for(int j = 0; j < Tablero1.length; j++){
+                if(Tablero1[i][j] instanceof caballero){
+                    
+                }
+            }
+        }
     }
 
 }
