@@ -9,6 +9,20 @@ package lab.pkg4_kennethnuñezyjoselagos;
  *
  * @author tali_
  */
-public class caballero {
+public class caballero extends Piezas{
+
+    public caballero() {
+        super();
+    }
+
+    public caballero(String color, String material) {
+        super(color, material);
+    }
+
+    @Override
+    public void movement() {
+        
+    }
+    
     
 }
