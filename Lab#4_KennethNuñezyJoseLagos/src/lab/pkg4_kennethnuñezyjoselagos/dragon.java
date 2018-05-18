@@ -18,8 +18,13 @@ public class dragon extends Piezas {
     public dragon(String color, String material) {
         super(color, material);
     }
+
+    public String getColor() {
+        return color;
+    }
+    
     @Override
-    public void movement() {
+    public void movement(Piezas[][]Tablero, int x,int y,int a,int b) {
     
     }
     
