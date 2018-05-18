@@ -64,6 +64,8 @@ public class Lab4_KennethNuñezyJoseLagos {
                     JugadoresMain();
                     break;
                 case 2:
+                    if(PlayerOne == true && PlayerTwo == false){
+                    Printer();
                     System.out.println("Las coordenadas se meten de la siguiente manera: ");
                     System.out.println("X,Y      (Sin parentesis ni nada siendo x su posicion en x y Y su posicion en y");
                     while(alive == true){
@@ -72,16 +74,12 @@ public class Lab4_KennethNuñezyJoseLagos {
                             String position = read.nextLine();
                             String[] positionizer = position.split(",");
                             
-                            for(int i = 0; i < Tablero1.length;i++){
-                                for(int j = 0; j<Tablero1.length;j++){
-                                    
-                                }
-                            }
                             
                         }
                         if(alive == true){
                             
                         }
+                    }
                     }
                     break;
                 case 3:
@@ -176,9 +174,46 @@ public class Lab4_KennethNuñezyJoseLagos {
         for(int i = 0; i < Tablero1.length; i++){
             for(int j = 0; j < Tablero1.length; j++){
                 if(Tablero1[i][j] instanceof caballero){
-                    
+                    if(Tablero1[i][j].getColor().equals("Blanco")){
+                        System.out.print("[bC]");
+                    } else{
+                        System.out.print("[nC]");
+                    }
+                } else if(Tablero1[i][j] instanceof arquero){
+                    if(Tablero1[i][j].getColor().equals("Blanco")){
+                        System.out.print("[bA]");
+                    } else{
+                        System.out.print("[nA]");
+                    }
+                } else if(Tablero1[i][j] instanceof dragon){
+                    if(Tablero1[i][j].getColor().equals("Blanco")){
+                        System.out.print("[bF]");
+                    } else{
+                        System.out.print("[nF]");
+                    }
+                } else if(Tablero1[i][j] instanceof duendes){
+                    if(Tablero1[i][j].getColor().equals("Blanco")){
+                        System.out.print("[bD]");
+                    } else{
+                        System.out.print("[nD]");
+                    }
+                } else if(Tablero1[i][j] instanceof mago){
+                    if(Tablero1[i][j].getColor().equals("Blanco")){
+                        System.out.print("[bM]");
+                    } else{
+                        System.out.print("[nM]");
+                    }
+                } else if(Tablero1[i][j] instanceof rey){
+                    if(Tablero1[i][j].getColor().equals("Blanco")){
+                        System.out.print("[bR]");
+                    } else{
+                        System.out.print("[nR]");
+                    }
+                } else {
+                    System.out.print("[__]");
                 }
             }
+            System.out.println("");
         }
     }
 
