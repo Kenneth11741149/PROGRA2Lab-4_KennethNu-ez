@@ -19,8 +19,12 @@ public class duendes extends Piezas {
         super(color, material);
     }
 
+    public String getColor() {
+        return color;
+    }
+
     @Override
-    public void movement() {
+    public void movement(Piezas[][]Tablero, int x,int y,int a,int b) {
        
     }
     

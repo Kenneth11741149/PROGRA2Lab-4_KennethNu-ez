@@ -14,7 +14,7 @@ public abstract class Piezas {
         this.color = color;
         this.material = material;
     }
-    public abstract void movement();
+    public abstract void movement(Piezas[][]Tablero, int x,int y,int a,int b);
 
     public String getColor() {
         return color;
