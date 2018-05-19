@@ -92,6 +92,9 @@ public class Lab4_KennethNuñezyJoseLagos {
                             }
                             
                         }
+                        Printer();
+                        
+                        
                         
                         alive = GameEnder();
                         if(alive == true){
@@ -113,6 +116,7 @@ public class Lab4_KennethNuñezyJoseLagos {
                              }
                             }
                         }
+                        Printer();
                         alive = GameEnder();
                     }
                     }
