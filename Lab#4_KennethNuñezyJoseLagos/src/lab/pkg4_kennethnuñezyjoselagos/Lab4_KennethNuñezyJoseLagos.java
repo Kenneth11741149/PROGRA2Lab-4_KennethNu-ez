@@ -75,8 +75,9 @@ public class Lab4_KennethNuñezyJoseLagos {
                         if(alive == true){
                             boolean legalwhite = false;
                             while(legalwhite == false){
-                            System.out.println("Primer jugador ingrese su posicion actual. ");
+                            System.out.println("jugador blanco ingrese su posicion actual. ");
                             String position = read.nextLine();
+                            read = new Scanner(System.in);
                             String[] positionizer = position.split(",");
                             int Aer = Integer.parseInt(positionizer[0]);
                             int Ber = Integer.parseInt(positionizer[1]);
@@ -100,8 +101,9 @@ public class Lab4_KennethNuñezyJoseLagos {
                         if(alive == true){
                             boolean legalblack = false;
                             while(legalblack == false){
-                            System.out.println("Primer jugador ingrese su posicion actual. ");
+                            System.out.println(" jugador negro ingrese su posicion actual. ");
                             String position = read.nextLine();
+                            read = new Scanner (System.in);
                             String[] positionizer = position.split(",");
                             int Aerr = Integer.parseInt(positionizer[0]);
                             int Berr = Integer.parseInt(positionizer[1]);
