@@ -50,8 +50,9 @@ public class Lab4_KennethNuñezyJoseLagos {
         Tablero1[9][9] = new caballero("Blanco","Madera");
         
         
-        System.out.println("Bienvenido azl laboratorio de Jose Lagos 11741409");
+        System.out.println("Bienvenido al laboratorio de Jose Lagos 11741409");
         System.out.println("Bienvenido al laboratorio de Kenneth Nuñez 11741149");
+        
         char resp = 'S';
         while (resp == 'S' || resp == 's') {
             System.out.println("***Menu Inicial***");
@@ -64,21 +65,55 @@ public class Lab4_KennethNuñezyJoseLagos {
                     JugadoresMain();
                     break;
                 case 2:
-                    if(PlayerOne == true && PlayerTwo == false){
+                    
+                    if(PlayerOne == true && PlayerTwo == true){
+                        read.nextLine();
                     Printer();
                     System.out.println("Las coordenadas se meten de la siguiente manera: ");
-                    System.out.println("X,Y      (Sin parentesis ni nada siendo x su posicion en x y Y su posicion en y");
+                    System.out.println("X,Y      (Sin parentesis ni espacios siendo x su posicion en x y Y su posicion en y)");
                     while(alive == true){
                         if(alive == true){
+                            boolean legalwhite = false;
+                            while(legalwhite == false){
                             System.out.println("Primer jugador ingrese su posicion actual. ");
                             String position = read.nextLine();
                             String[] positionizer = position.split(",");
-                            
+                            int Aer = Integer.parseInt(positionizer[0]);
+                            int Ber = Integer.parseInt(positionizer[1]);
+                            System.out.println("Ingrese la posicion de donde se va a mover. ");
+                            String newposition = read.nextLine();
+                            String[] newpositionizer = newposition.split(",");
+                            int Xer = Integer.parseInt(newpositionizer[0]);
+                            int Yer = Integer.parseInt(newpositionizer[1]);
+                            legalwhite = ValidateWhite(Aer, Ber);
+                            if(legalwhite == true){
+                                Tablero1[Aer][Ber].movement(Tablero1, Xer, Yer, Aer, Ber);
+                            }
+                            }
                             
                         }
+                        
+                        alive = GameEnder();
                         if(alive == true){
-                            
+                            boolean legalblack = false;
+                            while(legalblack == false){
+                            System.out.println("Primer jugador ingrese su posicion actual. ");
+                            String position = read.nextLine();
+                            String[] positionizer = position.split(",");
+                            int Aerr = Integer.parseInt(positionizer[0]);
+                            int Berr = Integer.parseInt(positionizer[1]);
+                            System.out.println("Ingrese la posicion de donde se va a mover. ");
+                            String newposition = read.nextLine();
+                            String[] newpositionizer = newposition.split(",");
+                            int Xerr = Integer.parseInt(newpositionizer[0]);
+                            int Yerr = Integer.parseInt(newpositionizer[1]);
+                            legalblack = ValidateBlack(Aerr, Berr);
+                             if(legalblack == true){
+                                 Tablero1[Aerr][Berr].movement(Tablero1, Xerr, Yerr, Aerr, Berr);
+                             }
+                            }
                         }
+                        alive = GameEnder();
                     }
                     }
                     break;
@@ -105,7 +140,7 @@ public class Lab4_KennethNuñezyJoseLagos {
                         Jugadores();
                     } else if (PlayerTwo == false) {
                         System.out.println("***Menu Jugadores***");
-                        Jugadores();
+                        Jugadores1();
                     } else {
                         System.out.println("Es totalmente imposible tener mas de 2 jugadores, Favor usuar la clase Jugar. ");
                     }
@@ -169,7 +204,46 @@ public class Lab4_KennethNuñezyJoseLagos {
         }
         Jugadores x = new Jugadores(name, username, puntos, birthplace, age, gender);
         Players.add(x);
+        PlayerOne = true;
     }
+    
+    static void Jugadores1() {
+
+        System.out.println("Ingrese su nombre: ");
+        read.nextLine();
+        String name = read.nextLine();
+        System.out.println("Ingrese su nombre de usuario: ");
+        String username = read.nextLine();
+        int puntos = 0;
+        System.out.println("Ingrese su lugar de nacimiento: ");
+        String birthplace = read.nextLine();
+        System.out.println("Ingrese su edad: ");
+        int age = read.nextInt();
+        System.out.println("Ingrese su sexo: ");
+        System.out.println("1. Masculino ");
+        System.out.println("2. Femenino ");
+        System.out.println("3. Otro ");
+        int option = read.nextInt();
+        String gender;
+        switch (option) {
+            case 1:
+                gender = "Masculino";
+                break;
+            case 2:
+                gender = "Femenino";
+                break;
+            case 3:
+                gender = "Otro";
+                break;
+            default:
+                gender = "Ninguno especificado.";
+                break;
+        }
+        Jugadores x = new Jugadores(name, username, puntos, birthplace, age, gender);
+        Players.add(x);
+        PlayerTwo = true;
+    }
+    
     static void Printer(){
         for(int i = 0; i < Tablero1.length; i++){
             for(int j = 0; j < Tablero1.length; j++){
@@ -214,6 +288,45 @@ public class Lab4_KennethNuñezyJoseLagos {
                 }
             }
             System.out.println("");
+        }
+    }
+    
+    static boolean ValidateBlack(int X, int Y){
+        if(Tablero1[X][Y].getColor().equals("Negro")){
+            if(X == 0 && Y == 4){
+                System.out.println("No se puede mover el Rey");
+                return false;
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+    static boolean GameEnder(){
+        int KingCounter = 0;
+        for(int i = 0; i < Tablero1.length; i++){
+            for(int j = 0; j < Tablero1.length; j++){
+                if(Tablero1[i][j] instanceof rey){
+                    KingCounter++;
+                }
+            }
+        }
+        if(KingCounter == 2){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    static boolean ValidateWhite(int X, int Y){
+        if(Tablero1[X][Y].getColor().equals("Blanco") ){
+            if(X == 9 && Y == 5){
+                System.out.println("No se puede mover el rey.");
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+            return false;
         }
     }
 
